@@ -1,0 +1,340 @@
+@media (max-width: 692px) {
+  bg-body {
+    display: none;
+  }
+}
+
+@media (max-width: 850px) {
+  #large-player1 {
+    display: none;
+  }
+}
+
+@media (max-width: 100px) {
+  .audio-player2 .track-info2 {
+    display: none;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  padding-top: 75px;
+}
+
+.universal-quality {
+  border-radius: 10px;
+  background-color: var(--bs-dark);
+  height: 35px;
+  margin-right: 10px;
+}
+
+#songList {
+  height: 200px;
+  width: auto;
+  border-radius: 40px;
+  margin-bottom: 20px;
+}
+
+.next-prev-btn {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 0px;
+}
+
+.prev-page, .next-page {
+  background-color: var(--bs-primary);
+  border-radius: 20px;
+  width: 130px;
+  margin: 30px;
+  color: white;
+}
+
+.add-list-to-queue {
+  color: white;
+  border-radius: 19px;
+  margin: 5px;
+  font-size: small;
+  width: 40px;
+  height: 40px;
+}
+
+.list-menu {
+  color: white;
+  border-radius: 19px;
+  margin: 5px;
+  font-size: medium;
+  height: 40px;
+  width: 40px;
+  font-weight: 900;
+}
+
+#message {
+  position: fixed;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 16px;
+  display: none;
+  z-index: 999;
+  cursor: pointer;
+  width: 350px;
+}
+
+#headingContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fa.fa-search.search-btn {
+  margin-left: 10px;
+  outline: solid;
+  padding: 5px;
+  border-radius: 7px;
+  outline-color: var(--bs-primary);
+  color: var(--bs-light);
+}
+
+.fa.fa-search.search-btn:hover {
+  margin-left: 10px;
+  outline: solid;
+  padding: 5px;
+  border-radius: 7px;
+  outline-color: var(--bs-primary);
+  color: var(--bs-primary);
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.tab-container {
+  display: flex;
+  gap: 0px;
+  background: var(--bg-color);
+  padding: 1px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  min-width: 360px;
+  max-width: 500px;
+  width: 370px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.tab-btn {
+  margin-top: 10px;
+  padding: 10px 0px;
+  border: none;
+  background: transparent;
+  color: var(--bs-light);
+  border-radius: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-weight: bold;
+  width: 80px;
+}
+
+.tab-btn.active-tab {
+  background: var(--bs-primary);
+  color: white;
+}
+
+.tab-btn.active-tab:hover {
+  background: var(--bs-primary);
+  color: white;
+  outline: none;
+}
+
+.tab-btn:hover {
+  outline: solid;
+  outline-width: 2px;
+  color: var(--bs-light);
+  outline-color: var(--bs-primary);
+}
+
+/* Search Box */
+
+.search-form {
+  display: flex;
+  align-items: center;
+  border-radius: var(--border-radius);
+  padding: 10px;
+  margin-top: 15px;
+  width: 100%;
+  max-width: 380px;
+}
+
+.search-box {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: solid;
+  font-size: 16px;
+  border-radius: 10px;
+  background-color: var(--bs-dark);
+  outline-color: var(--bs-light);
+  outline-width: 1px;
+}
+
+.search-btn {
+  background: var(--primary-color);
+  color: var(--bs-light);
+  padding: 7px;
+  margin-left: 10px;
+  border-radius: 10px;
+  outline: solid;
+  outline-width: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.search-btn:hover {
+  outline-color: var(--bs-primary);
+  color: var(--bs-primary);
+}
+
+.settings {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 380px;
+  margin: 0 auto;
+  margin-top: 10px;
+  background-color: var(--bs-secondary);
+  margin-bottom: 10px;
+}
+
+#settingsText {
+  font-size: larger;
+  font-weight: 500;
+  margin: 10px 0px;
+}
+
+.settings-option-text {
+  font-size: medium;
+  max-width: 160px;
+}
+
+.settings-options {
+  width: 330px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.theme-dropdown, .custom-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-btn, .theme-dropdown-btn {
+  background: var(--bs-secondary);
+  color: var(--bs-light);
+  padding: 10px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 150px;
+  margin: 6px 0px;
+}
+
+.dropdown-content, .theme-dropdown-content {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background: var(--bs-secondary);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  width: 150px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: none;
+  height: auto;
+}
+
+.theme-dropdown-content.show, .dropdown-content.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  z-index: 1;
+}
+
+.dropdown-content div, .theme-dropdown-content div {
+  padding: 10px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dropdown-content div:hover, .theme-dropdown-content div:hover {
+  background: var(--bs-primary);
+}
+
+input[type="checkbox"][data-toggle="toggle"] {
+  appearance: none;
+  width: 50px;
+  height: 25px;
+  background: #ccc;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+input[type="checkbox"][data-toggle="toggle"]:checked {
+  background: var(--bs-primary);
+}
+
+input[type="checkbox"][data-toggle="toggle"]::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  top: 50%;
+  left: 4px;
+  transform: translateY(-50%);
+  transition: 0.3s;
+}
+
+input[type="checkbox"][data-toggle="toggle"]:checked::before {
+  left: 26px;
+}
+
+.toggle-switch {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 150px;
+  outline: solid 2px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 8px;
+  margin: 0px 0px;
+  justify-content: space-between;
+}
+
+#toggleStatus {
+  margin-right: 10px;
+  font-size: larger;
+}
+
