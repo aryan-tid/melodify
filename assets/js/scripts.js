@@ -1,9 +1,21 @@
-const user = JSON.parse(localStorage.getItem("loggedInUser"));
-if (!user) {
-    window.location.href = "login.html"; // Redirect to login if not logged in
-} else {
-    console.log("Welcome, " + user.email);
-}
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+
+    const auth = getAuth();
+
+    onAuthStateChanged(auth, (user) => {
+        if (!user) {
+            // Redirect to login page if not logged in
+            window.location.href = "https://aryantidke.me/melodify/login.html";
+        } else {
+            console.log("User is logged in:", user.email);
+        }
+    });
+
+    // Logout Function (Optional)
+    window.logout = async function() {
+        await auth.signOut();
+        window.location.href = "https://aryantidke.me/melodify/login.html"; // Redirect to login after logout
+    };
 
 
 function goToHome() {
