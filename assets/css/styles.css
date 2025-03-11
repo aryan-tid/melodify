@@ -20,10 +20,34 @@
   display: none;
 }
 
+.user-controls {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.user-controls button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 body {
   margin: 0px;
   padding: 0px;
   padding-top: 75px;
+  visibility: hidden;
 }
 
 .universal-quality {

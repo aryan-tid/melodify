@@ -4,8 +4,8 @@ async function home() {
     history.pushState({ type: "home" }, "", "?type=home");
     if (modules.length === 0) {
         loader("show");
-        // const apiUrl = "https://home-omega-one.vercel.app/api/jiosaavn";
-        const apiUrl = "http://192.168.1.4:3000/api/jiosaavn";
+        const apiUrl = "https://home-omega-one.vercel.app/api/jiosaavn";
+        // const apiUrl = "http://192.168.1.4:3000/api/jiosaavn";
         try {
             const response = await fetch(apiUrl);
             const data = await response.json();
@@ -71,7 +71,7 @@ function loadTrending(response) {
         songCard.innerHTML = `
                 <div class="image-container">
                     <img src="${song.image}" alt="${song.title}">
-                    <div class="play-button"><i class="fas fa-play"></i></div>
+                    <div class="play-button">▶</div>
                 </div>
                 <h3 class="card-title">${song.title}</h3>
             `;
@@ -120,7 +120,7 @@ function displayPlaylists(playlists) {
         playlistCard.innerHTML = `
                 <div class="image-container">
                     <img src="${playlist.image}" alt="${playlist.title}">
-                    <div class="play-button"><i class="fas fa-play"></i></div>
+                    <div class="play-button">▶</div>
                 </div>
                 <h3 class="card-title">${playlist.title}</h3>
                 <p class="card-subtitle">${playlist.subtitle}</p>
@@ -147,7 +147,7 @@ function loadNewAlbums(albums) {
         albumsCard.innerHTML = `
                 <div class="image-container">
                     <img src="${album.image}" alt="${album.title}">
-                    <div class="play-button"><i class="fas fa-play"></i></div>
+                    <div class="play-button">▶</div>
                 </div>
                 <h3 class="card-title">${album.title}</h3>
                 <p class="card-subtitle">${album.subtitle}</p>
@@ -198,7 +198,7 @@ function loadTopCharts(playlists) {
         playlistCard.innerHTML = `
                 <div class="image-container">
                     <img src="${playlist.image}" alt="${playlist.title}">
-                    <div class="play-button"><i class="fas fa-play"></i></div>
+                    <div class="play-button">▶</div>
                 </div>
                 <h3 class="card-title">${playlist.title}</h3>
             `;
@@ -223,7 +223,7 @@ function loadArtists(artists) {
         artistsCard.innerHTML = `
                 <div class="image-container">
                     <img src="${artists.image}" alt="${artists.title}">
-                    <div class="play-button"><i class="fas fa-play"></i></div>
+                    <div class="play-button">▶</div>
                 </div>
                 <h3 class="card-title">${artists.title}</h3>
                 <p class="card-subtitle">${artists.subtitle}</p>
@@ -238,13 +238,4 @@ function loadArtists(artists) {
     });
 }
 
-function scrollLeft(button) {
-    const container = button.parentElement.querySelector(".scroll-container"); // Get the scrolling div
-    container.scrollBy({ left: -300, behavior: "smooth" }); // Scroll left
-}
-
-function scrollRight(button) {
-    const container = button.parentElement.querySelector(".scroll-container"); // Get the scrolling div
-    container.scrollBy({ left: 300, behavior: "smooth" }); // Scroll right
-}
 

@@ -87,19 +87,18 @@
 }
 
 .home .card:hover .image-container img, .additional-details .card:hover .image-container img {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .home .play-button, .additional-details .play-button {
   position: absolute;
   bottom: 10px;
   right: 10px;
-  background: #8383838d;
+  background: var(--bs-secondary);
   border-radius: 50%;
-  padding: 6px 10px;
+  padding: 8px 13px;
   cursor: pointer;
-  transition: 0.3s ease-in-out, transform 0.3s ease-in-out;
-  font-size: 11px;
+  transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 #topCharts .play-button, #artists .play-button {
@@ -122,6 +121,10 @@
   transition: color 0.3s ease-in-out;
 }
 
+.home .card:hover h3, .additional-details .card:hover h3 {
+  font-weight: 900;
+}
+
 .home p, .additional-details p {
   font-size: 12px;
   color: var(--bs-light);
@@ -136,9 +139,5 @@
 .home .heading, .additional-details .heading {
   font-size: 1.2rem;
   font-weight: bold;
-}
-
-#home {
-  max-width: 800px;
 }
 

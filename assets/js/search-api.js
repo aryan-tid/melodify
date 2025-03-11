@@ -1,8 +1,8 @@
 const songListImg = document.querySelector(".song-list");
 // const APIbaseURL = "http://192.168.1.4:3000/api/";
-const APIbaseURL2 = "http://192.168.1.4:3000/api/";
-// const APIbaseURL2 = "https://home-omega-one.vercel.app/api/";
-// const APIbaseURL = "https://jiosaavn-api.siddhivinayaktidake04.workers.dev/api/";
+// const APIbaseURL2 = "http://192.168.1.4:3000/api/";
+const APIbaseURL2 = "https://home-omega-one.vercel.app/api/";
+// const APIbaseURL = "https://saavn.dev/api/";
 const APIbaseURL = "https://vercel-jiosaavn.vercel.app/api/";
 let page = 1;
 let currentPageName = "default";
@@ -730,7 +730,7 @@ async function listSongs(category, id, page) {
                     songCard.innerHTML = `
                             <div class="image-container">
                                 <img src="${song.image}" alt="${song.title}">
-                                <div class="play-button"><i class="fas fa-play"></i></div>
+                                <div class="play-button">▶</div>
                             </div>
                             <h3 class="card-title">${song.title}</h3>
                             <p class="card-subtitle">${song.subtitle}</p>
@@ -797,7 +797,7 @@ async function listSongs(category, id, page) {
                     songCard.innerHTML = `
                             <div class="image-container">
                                 <img src="${song.image}" alt="${song.title}">
-                                <div class="play-button"><i class="fas fa-play"></i></div>
+                                <div class="play-button">▶</div>
                             </div>
                             <h3 class="card-title">${song.title}</h3>
                             <p class="card-subtitle">${song.subtitle}</p>

@@ -1,22 +1,46 @@
-import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
-
-    const auth = getAuth();
-
-    onAuthStateChanged(auth, (user) => {
-        if (!user) {
-            // Redirect to login page if not logged in
-            window.location.href = "https://aryantidke.me/melodify/login.html";
-        } else {
-            console.log("User is logged in:", user.email);
+// Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyC8sD0CKOl0SFPtiSySzzi_MFK0tKHKIKE",
+          authDomain: "melodify-fdd70.firebaseapp.com",
+          projectId: "melodify-fdd70",
+          storageBucket: "melodify-fdd70.firebasestorage.app",
+          messagingSenderId: "672339888095",
+          appId: "1:672339888095:web:b8d53151eaecf00e94266a",
+          measurementId: "G-G0GJ34V70D"
+        };
+        
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        
+        // Check authentication status
+        auth.onAuthStateChanged(function(user) {
+            if (!user) {
+                // No user is signed in, redirect to login page
+                window.location.href = "./login.html";
+            } else {
+                // User is signed in, show the content
+                document.addEventListener('DOMContentLoaded', function() {
+                    document.body.style.visibility = 'visible';
+                });
+            }
+        });
+// Optional: Display user email and handle logout
+        auth.onAuthStateChanged(function(user) {
+            if (user) {
+                document.getElementById('user-email').textContent = user.email;
+            }
+        });
+        
+        function logout() {
+            auth.signOut().then(function() {
+                // Sign-out successful.
+                window.location.href = "./login.html";
+            }).catch(function(error) {
+                // An error happened.
+                console.error('Logout error:', error);
+            });
         }
-    });
-
-    // Logout Function (Optional)
-    window.logout = async function() {
-        await auth.signOut();
-        window.location.href = "https://aryantidke.me/melodify/login.html"; // Redirect to login after logout
-    };
-
 
 function goToHome() {
     // Replace the current state with a clean one (removes all parameters)
@@ -152,6 +176,12 @@ function loader(action) {
     }
 }
 
+window.addEventListener("beforeunload", (event) => {
+    event.preventDefault();
+    event.returnValue = ""; // Necessary for showing the prompt in modern browsers
+});
+
+
 // Add this to your scripts.js or create a new file called app.js
 
 // Current app version - must match the service worker version
@@ -282,9 +312,3 @@ function initApp() {
 
 // Call initApp when the document is ready
 document.addEventListener('DOMContentLoaded', initApp);
-
-
-// window.addEventListener("beforeunload", (event) => {
-//   event.preventDefault();
-//   event.returnValue = ""; // Necessary for showing the prompt in modern browsers
-// });
